@@ -84,6 +84,32 @@ public class Player extends Actor
             setLocation(getX(), getY() - 8);
             animatePlayer();
         }
+        /*
+        //diagonal right up
+        else if(Greenfoot.isKeyDown("up")&&Greenfoot.isKeyDown("right"))
+        {
+            setLocation(getX()+8, getY() - 8);
+            animatePlayer();
+        }
+        //diagonal left up
+        else if(Greenfoot.isKeyDown("up")&&Greenfoot.isKeyDown("left"))
+        {
+            setLocation(getX()-8, getY() - 8);
+            animatePlayer();
+        }
+        //diagonal down right
+        else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("right"))
+        {
+            setLocation(getX()+8, getY() + 8);
+            animatePlayer();
+        }
+        //diagonal down left
+        else if(Greenfoot.isKeyDown("down")&&Greenfoot.isKeyDown("left"))
+        {
+            setLocation(getX()+8, getY() - 8);
+            animatePlayer();
+        }
+        */
         else 
         {
             if(facing.equals ("right"))
