@@ -86,13 +86,13 @@ public class Player extends Actor
         }
         /*
         //diagonal right up
-        else if(Greenfoot.isKeyDown("up")&&Greenfoot.isKeyDown("right"))
+        else if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right"))
         {
             setLocation(getX()+8, getY() - 8);
             animatePlayer();
         }
         //diagonal left up
-        else if(Greenfoot.isKeyDown("up")&&Greenfoot.isKeyDown("left"))
+        else if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()-8, getY() - 8);
             animatePlayer();
