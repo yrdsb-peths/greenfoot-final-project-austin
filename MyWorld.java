@@ -17,4 +17,9 @@ public class MyWorld extends World
         Player p = new Player();
         addObject (p, 300, 300);
     }
+    
+    public void gameOver()
+    {
+        // add greenfoot image here of gameover among us 
+    }
 }

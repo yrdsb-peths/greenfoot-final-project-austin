@@ -58,9 +58,11 @@ public class Player extends Actor
     }
     public void act()
     {
+        /*
+         * Animating the player
+         */
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-8);
             //Background theme song, putting it here so it plays again and again on loop
             tsong.play();
             facing = "left";
@@ -68,7 +70,6 @@ public class Player extends Actor
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(8);
             //Background theme song
             tsong.play();
             facing = "right";
@@ -76,50 +77,31 @@ public class Player extends Actor
         }
         else if(Greenfoot.isKeyDown("down"))
         {
-            setLocation(getX(), getY() + 8);
             animatePlayer();
         }
         else if(Greenfoot.isKeyDown("up"))
         {
+            animatePlayer();
+        }
+        
+ 
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-8);
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(8);
+        }
+        if(Greenfoot.isKeyDown("down"))
+        {
+            setLocation(getX(), getY() + 8);
+        }
+        else if(Greenfoot.isKeyDown("up"))
+        {
             setLocation(getX(), getY() - 8);
-            animatePlayer();
         }
-        /*
-        //diagonal right up
-        else if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("right"))
-        {
-            setLocation(getX()+8, getY() - 8);
-            animatePlayer();
-        }
-        //diagonal left up
-        else if(Greenfoot.isKeyDown("up") && Greenfoot.isKeyDown("left"))
-        {
-            setLocation(getX()-8, getY() - 8);
-            animatePlayer();
-        }
-        //diagonal down right
-        else if(Greenfoot.isKeyDown("down") && Greenfoot.isKeyDown("right"))
-        {
-            setLocation(getX()+8, getY() + 8);
-            animatePlayer();
-        }
-        //diagonal down left
-        else if(Greenfoot.isKeyDown("down")&&Greenfoot.isKeyDown("left"))
-        {
-            setLocation(getX()+8, getY() - 8);
-            animatePlayer();
-        }
-        */
-        else 
-        {
-            if(facing.equals ("right"))
-            {
-                setImage(walkingRight[0]);
-            }
-            if(facing.equals ("left"))
-            {
-                setImage(walkingLeft[0]);
-            }
-        }
+
     }
 }
+
