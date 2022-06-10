@@ -83,6 +83,18 @@ public class Player extends Actor
         {
             animatePlayer();
         }
+        else
+        {
+            if(facing.equals("right"))
+            {
+                setImage(walkingRight[0]);
+            }
+            if(facing.equals("left"))
+            {
+                setImage(walkingLeft[0]);
+            }
+        }
+        
         
  
         if(Greenfoot.isKeyDown("left"))
@@ -97,7 +109,7 @@ public class Player extends Actor
         {
             setLocation(getX(), getY() + 8);
         }
-        else if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("up"))
         {
             setLocation(getX(), getY() - 8);
         }

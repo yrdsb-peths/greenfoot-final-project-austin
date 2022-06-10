@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class gameOver extends World
 {
-
     /**
      * Constructor for objects of class gameOver.
      * 
@@ -16,6 +15,8 @@ public class gameOver extends World
     public gameOver()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(950, 800, 1); 
+        gameOverCharacter goc = new gameOverCharacter();
+        addObject(goc, 475,400);
     }
 }
