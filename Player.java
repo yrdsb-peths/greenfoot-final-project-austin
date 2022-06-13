@@ -115,5 +115,15 @@ public class Player extends Actor
         }
 
     }
+    
+    public void die()
+    {
+        if(isTouching(KnifeTop.class))
+        {
+            removeTouching(KnifeTop.class);
+            TitleScreen end = (TitleScreen) getWorld();
+            Greenfoot.setWorld(end);
+        }
+    }
 }
 

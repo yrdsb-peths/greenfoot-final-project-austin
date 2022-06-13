@@ -41,6 +41,5 @@ public class TitleScreen extends World
     {
         Player player = new Player();
         addObject(player, 480, 150);
-        player.setLocation(480, 200);
     }
 }

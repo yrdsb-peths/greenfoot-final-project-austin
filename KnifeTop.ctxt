@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=KnifeTop
+comment0.text=\r\n\ knife\ object\r\n\ \r\n\ @author\ Austin\r\n\ @version\ june\ 2022\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Knife\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=spd
+comment2.target=void\ setSpeed(int)
+numComments=3
