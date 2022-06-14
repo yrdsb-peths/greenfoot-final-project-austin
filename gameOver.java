@@ -18,5 +18,10 @@ public class gameOver extends World
         super(950, 800, 1); 
         gameOverCharacter goc = new gameOverCharacter();
         addObject(goc, 475,400);
+        if(Greenfoot.isKeyDown("space"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
     }
 }

@@ -20,7 +20,7 @@ public class Player extends Actor
     
     //Direction of the player
     String facing = "right";
-    
+    SimpleTimer animationTimer = new SimpleTimer();
     /*
      * contructor - the code that gets run one time when the object is created
      */
@@ -36,6 +36,7 @@ public class Player extends Actor
             walkingLeft[i] = new GreenfootImage("images/walking/walking" + i + ".png");
             walkingLeft[i].mirrorHorizontally();
         }
+        animationTimer.mark();
         //initial player image
         setImage(walkingRight[0]);
     }
@@ -45,6 +46,10 @@ public class Player extends Actor
     int imageIndex = 0;
     public void animatePlayer()
     {
+        if(animationTimer.millisElapsed()<1)
+        {
+            return;
+        }
         if(facing.equals("right"))
         {
             setImage(walkingRight[imageIndex]);
@@ -113,7 +118,6 @@ public class Player extends Actor
         {
             setLocation(getX(), getY() - 8);
         }
-
     }
     
     public void die()
