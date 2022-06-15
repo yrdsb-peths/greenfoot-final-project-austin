@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public int score = 0;
+    public static int score = 0;
+    public static int highscore = 0;
     Label scoreLabel = new Label(0,80);
     int level = 1;
     SimpleTimer spawnTimer = new SimpleTimer();
     SimpleTimer secondsTimer = new SimpleTimer();
-    static GreenfootSound tsong = new GreenfootSound("themesong.mp3");
+    static GreenfootSound tsong = new GreenfootSound("sounds/themesong.mp3");
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -45,6 +46,10 @@ public class MyWorld extends World
                 level += 1;
             }
             secondsTimer.mark();
+            if (score > highscore)
+            {
+                highscore = score;
+            }
         }
     }
     public void spawnKnife()
