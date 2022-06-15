@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    public static int size = 60;
-    
+    public static int size = 90;
+    public static int speed = 8;
     
     
     //theme song variable
-    GreenfootSound tsong = new GreenfootSound("themesong.mp3");
+    
     //walking animation variable
     GreenfootImage[] walkingRight = new GreenfootImage[9];
     GreenfootImage[] walkingLeft = new GreenfootImage[9];
@@ -29,12 +29,14 @@ public class Player extends Actor
         for (int i = 0; i<walkingRight.length; i++)
         {
             walkingRight[i] = new GreenfootImage("images/walking/walking" + i + ".png");
+            walkingRight[i].scale(size,size);
         }
         
         for (int i = 0; i<walkingLeft.length; i++)
         {
             walkingLeft[i] = new GreenfootImage("images/walking/walking" + i + ".png");
             walkingLeft[i].mirrorHorizontally();
+            walkingLeft[i].scale(size,size);
         }
         animationTimer.mark();
         //initial player image
@@ -69,14 +71,14 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("left"))
         {
             //Background theme song, putting it here so it plays again and again on loop
-            tsong.play();
+
             facing = "left";
             animatePlayer();
         }
         else if(Greenfoot.isKeyDown("right"))
         {
             //Background theme song
-            tsong.play();
+            
             facing = "right";
             animatePlayer();
         }
@@ -104,20 +106,21 @@ public class Player extends Actor
  
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-8);
+            move(-speed);
         }
         if(Greenfoot.isKeyDown("right"))
         {
-            move(8);
+            move(speed);
         }
         if(Greenfoot.isKeyDown("down"))
         {
-            setLocation(getX(), getY() + 8);
+            setLocation(getX(), getY() + speed);
         }
         if(Greenfoot.isKeyDown("up"))
         {
-            setLocation(getX(), getY() - 8);
+            setLocation(getX(), getY() - speed);
         }
+        die();
     }
     
     public void die()
@@ -125,9 +128,32 @@ public class Player extends Actor
         if(isTouching(KnifeTop.class))
         {
             removeTouching(KnifeTop.class);
-            TitleScreen end = (TitleScreen) getWorld();
+            MyWorld.gameOver();
+            GameOver end = new GameOver();
+            Greenfoot.setWorld(end);
+        }
+        if(isTouching(KnifeRight.class))
+        {
+            removeTouching(KnifeRight.class);
+            MyWorld.gameOver();
+            GameOver end = new GameOver();
+            Greenfoot.setWorld(end);
+        }
+        if(isTouching(KnifeLeft.class))
+        {
+            removeTouching(KnifeLeft.class);
+            MyWorld.gameOver();
+            GameOver end = new GameOver();
+            Greenfoot.setWorld(end);
+        }  
+        if(isTouching(KnifeBottom.class))
+        {
+            removeTouching(KnifeBottom.class);
+            MyWorld.gameOver();
+            GameOver end = new GameOver();
             Greenfoot.setWorld(end);
         }
     }
+    
 }
 

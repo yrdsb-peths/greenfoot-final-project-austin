@@ -20,7 +20,7 @@ public class KnifeLeft extends Actor
         setLocation (x+2, y);
         
         MyWorld world = (MyWorld) getWorld();
-        if(getX() >=world.getWidth())
+        if(getX() >=world.getWidth()-1)
         {
             world.removeObject(this);
         }
