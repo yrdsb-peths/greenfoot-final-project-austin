@@ -9,16 +9,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     Label titleLabel = new Label ("Survive the Imposter", 60);
-    
+    Label start = new Label("Click 'space' to start", 40);
     /**
      * Constructor for objects of class TitleScreen.
      * 
      */
     public TitleScreen()
-    {    
+    {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         addObject (titleLabel, 300, 85);
+        addObject(start, 300, 300);
         prepare();
     }
     
@@ -29,8 +30,8 @@ public class TitleScreen extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
+            Story story = new Story();
+            Greenfoot.setWorld(story);
         }
     }
     
@@ -40,6 +41,8 @@ public class TitleScreen extends World
      */
     private void prepare()
     {
+        Knife k = new Knife();
+        addObject (k, 120, 200);
         PlayerModel player = new PlayerModel();
         addObject(player, 480, 200);
     }

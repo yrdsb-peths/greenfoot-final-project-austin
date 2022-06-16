@@ -14,12 +14,13 @@ public class MyWorld extends World
     int level = 1;
     SimpleTimer spawnTimer = new SimpleTimer();
     SimpleTimer secondsTimer = new SimpleTimer();
-    static GreenfootSound tsong = new GreenfootSound("sounds/themesong.mp3");
+    static GreenfootSound tsong = new GreenfootSound("themesong.mp3");
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 600, 1); 
         Player p = new Player();
+
         addObject (p, 300, 300);
         addObject(scoreLabel, 50,50);
         spawnTimer.mark();
