@@ -18,13 +18,14 @@ public class KnifeBottom extends Actor
         int x = getX();
         int y = getY() - speed;
         setLocation (x, y-2);
-        
+
         MyWorld world = (MyWorld) getWorld();
         if(getY() <= 1)
         {
             world.removeObject(this);
         }
     }
+
     public static void setSpeed(int spd)
     {
         speed = spd;

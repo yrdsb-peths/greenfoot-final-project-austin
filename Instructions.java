@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Instructions here.
+ * Instructions for how to play the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Austin Yip
+ * @version June 2022
  */
 public class Instructions extends World
 {
+    //Labels for the instructions
     Label title = new Label ("Instructions", 100);
     Label story1 = new Label ("Watch out!! The aliens are willing to do", 35);
     Label story2 = new Label ("anything to get their power source back!!", 35);
@@ -22,8 +23,11 @@ public class Instructions extends World
      * 
      */
     public Instructions()
-    {    
+    {
+        //create a 600x600 pixel world
         super(600, 600, 1); 
+        
+        //add text
         addObject(title, 300, 100);
         addObject(story1, 300, 200);
         addObject(story2, 300, 240);
@@ -34,8 +38,10 @@ public class Instructions extends World
         addObject(story7, 300, 440);
         addObject(cont, 300, 520);
     }
+
     public void act()
     {
+        //sets the world into the main game world when pressed enter
         if(Greenfoot.isKeyDown("enter"))
         {
             MyWorld game = new MyWorld();

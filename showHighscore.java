@@ -9,17 +9,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class showHighscore extends Actor
 {
     Label highS = new Label(0,80);
-    
+
     /**
      * Act - do whatever the showHighscore wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+
     public void act()
     {
         if (MyWorld.score > MyWorld.highscore)
-            {
-                MyWorld.highscore = MyWorld.score;
-            }
+        {
+            MyWorld.highscore = MyWorld.score;
+        }
     }
 }

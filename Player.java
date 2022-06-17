@@ -10,14 +10,12 @@ public class Player extends Actor
 {
     public static int size = 90;
     public static int speed = 8;
-    
-    
+
     //theme song variable
-    
     //walking animation variable
     GreenfootImage[] walkingRight = new GreenfootImage[9];
     GreenfootImage[] walkingLeft = new GreenfootImage[9];
-    
+
     //Direction of the player
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -31,7 +29,7 @@ public class Player extends Actor
             walkingRight[i] = new GreenfootImage("images/walking/walking" + i + ".png");
             walkingRight[i].scale(size,size);
         }
-        
+
         for (int i = 0; i<walkingLeft.length; i++)
         {
             walkingLeft[i] = new GreenfootImage("images/walking/walking" + i + ".png");
@@ -63,6 +61,7 @@ public class Player extends Actor
             imageIndex = (imageIndex+1)%walkingLeft.length; 
         }
     }
+
     public void act()
     {
         /*
@@ -78,7 +77,7 @@ public class Player extends Actor
         else if(Greenfoot.isKeyDown("right"))
         {
             //Background theme song
-            
+
             facing = "right";
             animatePlayer();
         }
@@ -101,9 +100,7 @@ public class Player extends Actor
                 setImage(walkingLeft[0]);
             }
         }
-        
-        
- 
+
         if(Greenfoot.isKeyDown("left"))
         {
             move(-speed);
@@ -122,7 +119,7 @@ public class Player extends Actor
         }
         die();
     }
-    
+
     public void die()
     {
         if(isTouching(KnifeTop.class))
@@ -154,6 +151,6 @@ public class Player extends Actor
             Greenfoot.setWorld(end);
         }
     }
-    
+
 }
 

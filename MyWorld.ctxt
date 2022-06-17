@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MyWorld
-comment0.text=\r\n\ Main\ World\r\n\ \r\n\ @author\ Austin\ Yip\ \r\n\ @version\ May\ 30th\r\n
+comment0.text=\r\n\ Main\ Game\ World\r\n\ \r\n\ @author\ Austin\ Yip\r\n\ @version\ June\ 2022\r\n
 comment1.params=
 comment1.target=MyWorld()
 comment2.params=
